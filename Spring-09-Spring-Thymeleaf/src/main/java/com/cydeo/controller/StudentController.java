@@ -19,4 +19,9 @@ public class StudentController {
 
     }
 
+    @RequestMapping("/welcome")
+    public String info(){
+    return "student/welcome";
+    }
+
 }
