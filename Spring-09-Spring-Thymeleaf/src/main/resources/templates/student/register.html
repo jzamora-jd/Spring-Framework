@@ -6,10 +6,17 @@
 </head>
 <body>
 
+<!--Display value-->
+
 <h2>Welcome new students </h2>
 <h2 th:text="${students.get(0).firstName}"></h2>
 <h2 th:text="${students.get(1).firstName}"></h2>
 
+
+<!--Concatenation-->
+<h2 th:text="${'Welcome ' + students.get(3).firstName}"></h2>
+
+<!--Link-->
 
 </body>
 </html>
