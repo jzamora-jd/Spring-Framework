@@ -11,12 +11,8 @@ public class StudentController {
 
 @RequestMapping("/register")
     public String register(Model model){
-
     model.addAttribute("students", DataGenerator.createStudent());
-
-
-        return("student/register");
-
+    return("student/register");
     }
 
     @RequestMapping("/welcome")

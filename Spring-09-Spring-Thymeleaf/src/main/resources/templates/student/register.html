@@ -22,7 +22,33 @@
 <a th:href="@{/student/welcome}">Home page</a>
 
 
+<!--Adding Parameter to Link-->
+<br>
+<a th:href="@{/student/welcome(id=4)}">Link query params</a><br>
+<a th:href="@{/student/welcome(id=${students.get(0).getFirstName()})}"}>Link query params name</a><br>
 
+<!--Iteration-->
+<br>
+<h2>Student List</h2>
+<ul>
+    <li th:each="student : ${students}" th:text="${student.getFirstName()}">Students</li>
+    <li th:each="student : ${students}" th:text="${student.getFirstName()}">Students</li>
+</ul>
+
+
+<br>
+<h2>Student Table</h2>
+
+<tbody>
+<tr>
+    <td th:each="student : ${students}" th:text="${student.getFirstName()}"></td>
+
+</tr>
+
+<tr>
+    <td th:each="student : ${students}" th:text="${student.getLastName()}"></td>
+</tr>
+</tbody>
 
 </body>
 </html>
