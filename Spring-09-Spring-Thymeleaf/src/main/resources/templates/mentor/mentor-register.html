@@ -7,7 +7,7 @@
 <div align="center">
     <body>
 
-    <form th:object="${mentor}">
+    <form th:action="@{/mentor/confirm}" method="post" th:object="${mentor}">
 
         <label>First Name:</label>
         <input type="text" id="FirstName" th:field="*{firstName}">
@@ -22,7 +22,7 @@
         <input type="checkbox" th:field="*{graduated}">
         <br>
         <label>Gender:</label>
-        <input type="checkbox" value="Male"   th:field="*{gender}">Male
+        <input type="checkbox" value="Male" th:field="*{gender}">Male
         <input type="checkbox" value="Female" th:field="*{gender}">Female
         <br>
 
