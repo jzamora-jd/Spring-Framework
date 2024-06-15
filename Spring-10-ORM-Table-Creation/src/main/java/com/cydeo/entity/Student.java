@@ -20,14 +20,12 @@ public class Student {
     private String email;
     @Transient
     private String city;
-
     @Column(columnDefinition = "DATE")
     private LocalDate birthdate;
     @Column(columnDefinition = "TIME")
     private LocalTime birthtime;
     @Column(columnDefinition = "TIMESTAMP")
     private LocalDate birthDatetime;
-
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
