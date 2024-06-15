@@ -3,5 +3,5 @@
 -- VALUES(1,'Mike Smith');
 
 
-INSERT INTO student(id,first_name,last_name,email)
-VALUES(1,'Daniel','Zamora','DAZ@gmail.com');
+INSERT INTO student(first_name,last_name,email)
+VALUES('Daniel','Zamora','DAZ@gmail.com');
