@@ -24,4 +24,12 @@ public class Payment {
     private BigDecimal amount;
     private Status paymentStatus;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private PaymentDetail paymentDetail;
+
+    public Payment(LocalDate createDate, BigDecimal amount, Status paymentStatus) {
+        this.createDate = createDate;
+        this.amount = amount;
+        this.paymentStatus = paymentStatus;
+    }
 }
