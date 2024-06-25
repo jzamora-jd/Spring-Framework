@@ -12,6 +12,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 public class Merchant {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,6 +23,14 @@ public class Merchant {
     private BigDecimal commissionRate;
     private Integer payoutDelayCount;
 
-    @OneToMany(mappedBy = "merchant")// oin ne to many relationship: ownership belongs to the many side
+    @OneToMany(mappedBy = "merchant")// in one to many relationship: ownership belongs to the many side
     private List<Payment> paymentList;
+
+    public Merchant(String name, String code, BigDecimal transactionFee, BigDecimal commissionRate, Integer payoutDelayCount) {
+        this.name = name;
+        this.code = code;
+        this.transactionFee = transactionFee;
+        this.commissionRate = commissionRate;
+        this.payoutDelayCount = payoutDelayCount;
+    }
 }
