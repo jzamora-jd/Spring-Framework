@@ -20,8 +20,17 @@ public class Customer {
     private String name;
     private String surName;
     private String email;
+
     private String address;
 
-    @OneToMany
+    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
     private List<Payment> paymentList;
+
+    public Customer(String userName, String name, String surName, String email, String address) {
+        this.userName = userName;
+        this.name = name;
+        this.surName = surName;
+        this.email = email;
+        this.address = address;
+    }
 }
