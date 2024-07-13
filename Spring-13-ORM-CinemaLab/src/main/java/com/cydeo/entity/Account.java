@@ -1,7 +1,7 @@
 package com.cydeo.entity;
 
 import com.cydeo.enums.UserRole;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

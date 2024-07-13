@@ -1,6 +1,6 @@
 package com.cydeo.entity;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
