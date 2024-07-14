@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 public class Department{
     @Id
-    private String Department;
+    private String department;
     private String division;
 
 }
