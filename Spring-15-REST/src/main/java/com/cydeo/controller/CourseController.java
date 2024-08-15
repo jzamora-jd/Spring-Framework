@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController // @Controller + @ResponseBody
-@RequestMapping("/courses/api/v1")
+@RequestMapping("/courses/api/v1")//parent endpoint for all api calls
 public class CourseController {
 
-    private final CourseService courseService;
+    private final CourseService courseService; //inject course service
 
     public CourseController(CourseService courseService) {
         this.courseService = courseService;
     }
 
-    @GetMapping
+    @GetMapping//GET for endpoint /courses/api/v1
     public List<CourseDTO> getAllCourses(){
         List<CourseDTO> list = courseService.getCourses();
         return list;
