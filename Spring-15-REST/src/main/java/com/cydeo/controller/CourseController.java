@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController // @Controller + @ResponseBody
+@RestController // @Controller + @ResponseBody - replaces view UI
 @RequestMapping("/courses/api/v1")//parent endpoint for all api calls
 public class CourseController {
 
@@ -24,19 +24,20 @@ public class CourseController {
 
     }
 
-    @GetMapping("{id}")
+    @GetMapping("{id}")//this will only append to parent endpoint
     public CourseDTO getCourseById(@PathVariable("id") Long courseId){
         return courseService.getCourseById(courseId);
     }
 
-    @GetMapping("category/{name}")
+    @GetMapping("category/{name}") // getting category name using pathVariable
     public List<CourseDTO> getCourseByCategory(@PathVariable("name") String category){
         return courseService.getCoursesByCategory(category);
 
     }
 
     @PostMapping
-    public CourseDTO createCourse(@RequestBody CourseDTO course){
+    public CourseDTO createCourse(@RequestBody CourseDTO course){//course is coming from post body
+
         return courseService.createCourse(course);
     }
 
