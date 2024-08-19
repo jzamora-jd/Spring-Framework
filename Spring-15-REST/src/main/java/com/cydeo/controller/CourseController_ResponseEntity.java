@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/courses/api/v2")
+@RequestMapping("/courses/api/v2")//api version 2
 public class CourseController_ResponseEntity {
 
     private final CourseService courseService;
@@ -19,10 +19,10 @@ public class CourseController_ResponseEntity {
     }
 
     @GetMapping
-    public ResponseEntity<List<CourseDTO>> getAllCourses(){
+    public ResponseEntity<List<CourseDTO>> getAllCourses(){//allows user to send headers
         return ResponseEntity
-                .status(HttpStatus.ACCEPTED)
-                .header("Version","Cydeo.V2")
+                .status(HttpStatus.ACCEPTED) //has the code that will be returned
+                .header("Version","Cydeo.V2")//headers needed
                 .header("Operation","Get List")
                 .body(courseService.getCourses());
     }

@@ -42,7 +42,7 @@ public class CourseController {
     }
 
     @PutMapping("{id}")
-    public void updateCourse(@PathVariable("id") Long courseId,@RequestBody CourseDTO course){
+    public void updateCourse(@PathVariable("id") Long courseId,@RequestBody CourseDTO course){ //does not return anything - can also be seen in postman
         courseService.updateCourse(courseId,course);
     }
 
