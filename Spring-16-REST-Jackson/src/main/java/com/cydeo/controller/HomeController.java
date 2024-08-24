@@ -20,7 +20,7 @@ public class HomeController {
         this.accountRepository = accountRepository;
     }
 
-    @GetMapping("/users")
+    @GetMapping("/users") // to test localhost:8080/users
     public List<User> readAllUsers(){
         return userRepository.findAll();
     }

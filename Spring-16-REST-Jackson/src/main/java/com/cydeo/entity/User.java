@@ -16,11 +16,11 @@ import javax.persistence.*;
 @JsonIgnoreProperties(value = {"hibernateLazyInitializer"},ignoreUnknown = true)
 public class User extends BaseEntity {
 
-//    @JsonIgnore
+//    @JsonIgnore // putting JsonIgnore on Account high level class
     private String email;
 
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)//should not see password
     private String password;
 
 

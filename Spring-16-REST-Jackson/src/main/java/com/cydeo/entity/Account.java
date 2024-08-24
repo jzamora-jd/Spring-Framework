@@ -15,11 +15,11 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @Table(name = "account_details")
-@JsonIgnoreProperties(value = {"hibernateLazyInitializer"},ignoreUnknown = true)
+@JsonIgnoreProperties(value = {"hibernateLazyInitializer"},ignoreUnknown = true)//
 public class Account extends BaseEntity {
 
     private String name;
-    @JsonIgnore
+    @JsonIgnore //response api will omit address in response
     private String address;
     private String country;
     private String state;
