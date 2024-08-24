@@ -16,14 +16,14 @@ public class ResponseWrapper {
     private Integer code; //any status code
     private Object data; //data for api response
 
-    public ResponseWrapper(String message, Object data) {
+    public ResponseWrapper(String message, Object data) { //used for GET api calls
         this.success = true;
         this.message = message;
         this.code = HttpStatus.OK.value();
         this.data = data;
     }
 
-    public ResponseWrapper(String message) {
+    public ResponseWrapper(String message) {//many argument constructor
         this.message = message;
         this.code = HttpStatus.OK.value();
         this.success = true;
