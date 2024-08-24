@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/courses/api/v3")
+@RequestMapping("/courses/api/v3")//v3 endpoints to change what we are doing in each iteration
 public class CourseController_ResponseWrapper {
 
     private final CourseService courseService;
@@ -20,7 +20,7 @@ public class CourseController_ResponseWrapper {
     }
 
     @GetMapping
-    public ResponseEntity<ResponseWrapper> getAllCourses(){
+    public ResponseEntity<ResponseWrapper> getAllCourses(){//returning responseWrapper in specific format
 
         return ResponseEntity
                 .status(HttpStatus.ACCEPTED)

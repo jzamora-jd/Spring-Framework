@@ -30,14 +30,14 @@ public class CourseController_ResponseEntity {
 
     @GetMapping("{id}")
     public ResponseEntity<CourseDTO> getCourseById(@PathVariable("id") Long courseId){
-        return ResponseEntity.ok(courseService.getCourseById(courseId));
+        return ResponseEntity.ok(courseService.getCourseById(courseId));//return 200 Ok status
     }
 
     @PostMapping
-    public ResponseEntity<CourseDTO> createCourse(@RequestBody CourseDTO course){   //break till 8:30 pm
+    public ResponseEntity<CourseDTO> createCourse(@RequestBody CourseDTO course){
         return ResponseEntity
-                .status(HttpStatus.CREATED)
-                .header("Operation","Create")
+                .status(HttpStatus.CREATED)//201 created response
+                .header("Operation","Create")//headers passed during call
                 .body(courseService.createCourse(course));
     }
 

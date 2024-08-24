@@ -11,10 +11,10 @@ import org.springframework.http.HttpStatus;
 @NoArgsConstructor
 public class ResponseWrapper {
 
-    private boolean success;
-    private String message;
-    private Integer code;
-    private Object data;
+    private boolean success; //fields for api response
+    private String message; //custom message
+    private Integer code; //any status code
+    private Object data; //data for api response
 
     public ResponseWrapper(String message, Object data) {
         this.success = true;
