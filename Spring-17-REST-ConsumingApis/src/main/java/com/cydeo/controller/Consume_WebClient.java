@@ -13,7 +13,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-public class Consume_WebClient {
+public class Consume_WebClient {//
 
     private WebClient webClient = WebClient.builder().baseUrl("http://localhost:8080").build();
 
@@ -25,22 +25,22 @@ public class Consume_WebClient {
         this.genreRepository = genreRepository;
     }
 
-    @GetMapping("/flux-movie-cinemas")
-    public Flux<MovieCinema> readAllCinemaFlux(){
+    @GetMapping("/flux-movie-cinemas") //get all the cinemas endpoint
+    public Flux<MovieCinema> readAllCinemaFlux(){ // since its more than 1 we have to use flex (async)
 
-        return Flux.fromIterable(movieCinemaRepository.findAll());
+        return Flux.fromIterable(movieCinemaRepository.findAll());//reactive way endpoint
 
     }
 
 //    @GetMapping("/mono-movie-cinema/{id}")
-//    public Mono<MovieCinema> readById(@PathVariable("id") Long id){
+//    public Mono<MovieCinema> readById(@PathVariable("id") Long id){//mono is used to retrieve one at a time by id
 //
 //        return Mono.just(movieCinemaRepository.findById(id).get());
 //
 //    }
 
     @GetMapping("/mono-movie-cinema/{id}")
-    public ResponseEntity<Mono<MovieCinema>> readById(@PathVariable("id") Long id){
+    public ResponseEntity<Mono<MovieCinema>> readById(@PathVariable("id") Long id){ //response entity type response
 
         return ResponseEntity.ok(Mono.just(movieCinemaRepository.findById(id).get()));
 
@@ -70,7 +70,7 @@ public class Consume_WebClient {
 
 
     @GetMapping("/flux")
-    public Flux<MovieCinema> readWithWebClient(){
+    public Flux<MovieCinema> readWithWebClient(){//consuming my own endpoint /flux-movie-cinemas in a reactive way
 
         return webClient
                 .get()
