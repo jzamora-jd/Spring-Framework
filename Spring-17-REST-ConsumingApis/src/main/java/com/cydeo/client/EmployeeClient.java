@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 @FeignClient(url = "https://dummyapi.io",name = "EMPLOYEE-CLIENT")
 public interface EmployeeClient {
 
-    @GetMapping("/data/v1/user?limit=10")
+    @GetMapping("/data/v1/user?limit=10")//getting data from 3rd party website and sending needed header
     Employee getEmployee(@RequestHeader("app-id") String id);
 
 }
